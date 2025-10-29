@@ -1,0 +1,25 @@
+/* App.css */
+
+/* Set the background of the whole page to white */
+body {
+  background-color: white;  /* Sets the background color of the page to white */
+  color: black;             /* Sets the default text color to black */
+  margin: 0;                /* Removes default margin */
+  padding: 0;               /* Removes default padding */
+  font-family: 'Arial', sans-serif; /* Optional: Sets a clean font */
+  display: flex;            /* Enables Flexbox */
+  justify-content: center;  /* Centers content horizontally */
+  align-items: center;      /* Centers content vertically */
+  height: 100vh;            /* Makes sure the body takes up the full height of the viewport */
+}
+
+/* Ensures the app's main container is centered */
+.App {
+  display: flex;
+  flex-direction: column;   /* Stacks content vertically */
+  align-items: center;      /* Centers the items horizontally */
+  justify-content: center;  /* Centers the items vertically */
+  width: 100%;              /* Ensures full width */
+  text-align: center;       /* Ensures text is centered */
+  padding: 20px;            /* Adds padding to the app */
+}
