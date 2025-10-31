@@ -1,16 +1,54 @@
-# React + Vite
+# Email Writer Assistant – React Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Email Writer Assistant Frontend** is a modern **React + Vite** web application that allows users to generate AI-powered email replies.  
+It connects to a **Spring Boot backend** that uses **Spring AI** or **OpenAI APIs** to generate professional, casual, or friendly email responses — all within seconds.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Overview
 
-## React Compiler
+This frontend acts as the **user interface** for the complete **Email Writer Assistant system**, providing an elegant way to input an email’s content, select a tone, and view or copy the generated AI reply.  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+It is designed using **Material UI (MUI)** for responsive components and **Axios** for communicating with the backend API.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 System Architecture
+
+```mermaid
+graph TD;
+    A[React Frontend] -->|POST /api/email/generate| B[Spring Boot Backend];
+    B -->|Uses Prompt| C[Spring AI / OpenAI API];
+    C -->|Returns Generated Text| B;
+    B -->|Reply Response| A;
+    A -->|Display to User| D[Email Writer UI];
+```
+## 🧠 Features
+✅ Simple, elegant UI for composing email prompts
+✅ Option to select tone (Professional, Casual, Friendly)
+✅ Instant AI-generated reply from backend
+✅ Copy-to-clipboard functionality
+✅ Error handling and loading states
+✅ Built with React (Vite) + Material UI
+
+
+## ⚙️ Tech Stack
+| Layer            | Technology                 |
+| ---------------- | -------------------------- |
+| Frontend         | React (Vite)               |
+| UI Library       | Material UI (MUI)          |
+| HTTP Client      | Axios                      |
+| State Management | React Hooks                |
+| Deployment       | Netlify / Vercel (Planned) |
+
+## 🧩 Components Breakdown
+| Component                   | Purpose                               |
+| --------------------------- | ------------------------------------- |
+| **TextField**               | Input area for original email content |
+| **Select (Tone)**           | Choose AI reply tone                  |
+| **Button (Generate Reply)** | Sends request to backend              |
+| **Typography (Output)**     | Displays AI-generated reply           |
+| **Copy Button**             | Copies generated text to clipboard    |
+| **Error Section**           | Displays API or connection errors     |
+
+
